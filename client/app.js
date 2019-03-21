@@ -5,20 +5,24 @@ angular.module("karthikApp", [
     "karthikApp.services",
     "ngRoute"
 ])
-.config(function($routeProvider,$httpProvider){
+.config(function($routeProvider,$httpProvider,$locationProvider){
+    console.log("came hereee")
     $routeProvider
-        .when('/signin',{
-            templateUrl: 'auth/signin.html',
-            controller: 'AuthController'
-        })
-        .when('/signup', {
-            templateUrl: 'auth/signup.html',
-            controller: 'AuthController'
-        })
-        .when('/logout', {
-            templateUrl: 'auth/signin.html',
-            controller: 'AuthController'
-        })
+    .when('/signin',{
+        templateUrl: 'auth/signin.html',
+        controller: 'AuthController'
+    })
+    .when('/signup', {
+        templateUrl: 'auth/signup.html',
+        controller: 'AuthController'
+    })
+    .when('/logout', {
+        templateUrl: 'auth/signin.html',
+        controller: 'AuthController'
+    })
+    .otherwise('/')
+        
+        $locationProvider.html5Mode(true);
         $httpProvider.interceptors.push('AttachTokens');
 })
 .controller('AppController', function ($scope, Auth, $rootScope) {

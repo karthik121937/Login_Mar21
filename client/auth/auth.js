@@ -1,7 +1,7 @@
 angular.module('karthikApp.auth', [])// make an auth module
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
-
+console.log("cameeeeeeeeeeeeeee to auth controller");
 
   $scope.signin = function () {
     Auth.signin($scope.user)

@@ -5,12 +5,15 @@
 <script src="auth/auth.js"></script>
 <script src="services/services.js"></script>
 <script src="app.js"></script>
+<base href="/">
 <body ng-controller="AppController">
 
         <div class="top-nav-left">
-                <span><a href='#/signin' >Signin</a></span>
-                <span><a href='#/signup' >Signup</a></span>
-                <span><a href='#/logout' >Logout</a></span>
+                <span><a href='signin' >Signin</a></span>
+                <span><a href='signup' >Signup</a></span>
+                <span>
+                    <a ng-click="signout()" href='logout'>Log Out</a>
+                </span>
               </div>
 
         <div ng-if="!hasSession">
@@ -19,7 +22,7 @@
         <div ng-if="hasSession">
                 <h1> session present</h1>        
         </div>
-        
+
 <div ng-view></div>
     
 

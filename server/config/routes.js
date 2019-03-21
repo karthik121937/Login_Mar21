@@ -4,6 +4,6 @@ module.exports = function(app, express){
     app.post('/api/signin', userHandler.signin);
     app.post('/api/signup', userHandler.signup);
     app.get('/test',function(req,res){
-        res.end("its working")
+        res.end("homeeeeeee")
     })
 }
