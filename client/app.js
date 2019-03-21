@@ -8,6 +8,9 @@ angular.module("karthikApp", [
 .config(function($routeProvider,$httpProvider,$locationProvider){
     console.log("came hereee")
     $routeProvider
+    // .when('/',{
+    //     templateUrl: 'index'
+    // })
     .when('/signin',{
         templateUrl: 'auth/signin.html',
         controller: 'AuthController'
@@ -20,7 +23,9 @@ angular.module("karthikApp", [
         templateUrl: 'auth/signin.html',
         controller: 'AuthController'
     })
-    .otherwise('/')
+    .otherwise({
+        redirectTo: "/"
+      });
         
         $locationProvider.html5Mode(true);
         $httpProvider.interceptors.push('AttachTokens');
